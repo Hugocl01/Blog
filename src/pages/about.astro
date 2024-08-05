@@ -3,6 +3,8 @@ import '../styles/global.css';
 
 const pageTitle = "Sobre mi";
 
+import Navigation from '../components/Navigation.astro';
+
 const identity = {
     firstName: "Hugo",
     country: "España",
@@ -50,8 +52,7 @@ const skillColor = "navy";
         </style>
     </head>
     <body>
-        <a href="/">Inicio</a>
-        <a href="/about/">Sobre mi</a>
+        <Navigation />
         <h1>Sobre mi</h1>
         <h2>... ¡y mi nuevo sitio Astro!</h2>
         <p>

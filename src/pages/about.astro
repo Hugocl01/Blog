@@ -3,7 +3,7 @@ import '../styles/global.css';
 
 const pageTitle = "Sobre mi";
 
-import Navigation from '../components/Navigation.astro';
+import Header from '../components/Header.astro';
 
 const identity = {
     firstName: "Hugo",
@@ -27,7 +27,7 @@ const skills = [
 ];
 
 const happy = true;
-const finished = false;
+const finished = true;
 const goal = 3;
 
 const skillColor = "navy";
@@ -52,7 +52,7 @@ const skillColor = "navy";
         </style>
     </head>
     <body>
-        <Navigation />
+        <Header />
         <h1>Sobre mi</h1>
         <h2>... ¡y mi nuevo sitio Astro!</h2>
         <p>

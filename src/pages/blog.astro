@@ -6,8 +6,8 @@ const pageTitle = "Todos los posts";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <section class="">
-        <p>Aquí es donde publicaré sobre mi viaje de aprendizaje de Astro.</p>
+    <h2>Aquí es donde publicaré sobre mi viaje de aprendizaje de Astro.</h2>
+    <section class="flex flex-col gap-8">
         {allPosts.map((post) => <CardPost url={post.url} title={post.frontmatter.title} date={post.frontmatter.pubDate} readingTime={post.frontmatter.readingTime} description={post.frontmatter.description} author={post.frontmatter.author} image={post.frontmatter.image} tags={post.frontmatter.tags}/>)}
     </section>
 </BaseLayout>

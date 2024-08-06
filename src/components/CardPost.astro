@@ -11,15 +11,13 @@ const { title, url, date, readingTime, description, author, image, tags} = Astro
                 <p>{author}</p>
                 <img src={image.url} alt={image.alt}>
             </div>
-            <p class="">
-                {title}
-            </p>
+            <p class="">{title}</p>
             <div class="">
-                    {tags.map(tag => (<span>{tag}</span>))}
+                {tags.map(tag => (<span>{tag}</span>))}
             </div>
             <p class="">{description}</p>
         </div>
-        <p class="">read more →</p>
+        <p class="">Leer más →</p>
     </div>
 </a>
 

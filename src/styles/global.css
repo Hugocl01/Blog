@@ -23,7 +23,7 @@
 
   /* Colores de sombras */
   --shadow-projects-article: #f2f2f2;
-  --box-shadow-projects-article: rgba(0, 0, 0, 0.1);
+  --box-shadow: rgba(0, 0, 0, 0.1);
 
   /* Colores bordes */
   --border-a: #eee;
@@ -54,7 +54,7 @@
 
   /* Colores de sombras */
   --shadow-projects-article: #f2f2f2;
-  --box-shadow-projects-article: rgba(0, 0, 0, 0.1);
+  --box-shadow: rgba(0, 0, 0, 0.1);
 
   /* Colores bordes */
   --border-a: #eee;
@@ -84,7 +84,7 @@
 
   /* Colores de sombras */
   --shadow-projects-article: #222;
-  --box-shadow-projects-article: rgba(255, 255, 255, 0.1);
+  --box-shadow: rgba(255, 255, 255, 0.1);
 
   /* Colores bordes */
   --border-a: #222;
@@ -241,4 +241,31 @@ p {
   text-wrap: pretty;
 }
 
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: flex-start;
+}
 
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: start;
+}
+
+.tag {
+  color: var(--text-projects-span);
+  font-size: 1rem;
+  background-color: var(--background-span);
+  outline: 1px solid var(--border-a);
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+.tag:hover {
+  background-color: var(--background-a-hover);
+  cursor: pointer;
+}

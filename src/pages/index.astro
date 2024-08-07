@@ -10,7 +10,7 @@ const pageTitle = "Blog";
         <h1>Bienvenid@s a mi blog</h1>
         <h2>Aquí comentaré todo mi proceso en el desarrollo web.</h2>
     </section>
-    <section>
+    <section class="posts">
         {allPosts.slice(0, 3).map((post) => <CardPost url={post.url} title={post.frontmatter.title} date={post.frontmatter.pubDate} readingTime={post.frontmatter.readingTime} description={post.frontmatter.description} author={post.frontmatter.author} image={post.frontmatter.image} tags={post.frontmatter.tags}/>)}
         <div>
             <a href="blog">Ver todos los posts →</a>

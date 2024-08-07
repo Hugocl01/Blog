@@ -3,24 +3,34 @@ const { title, url, date, readingTime, description, author, image, tags } =
     Astro.props;
 ---
 
-<a href={url} class="no-underline">
-    <div class="card">
-        <div class="">
-            <div class="">
-                <p>{date}</p>
-                <p>Tiempo de lectura: {readingTime}</p>
-                <p>{author}</p>
-                <img src={image.url} alt={image.alt} />
-            </div>
-            <h3 class="">{title}</h3>
-            <div class="tags">
-                {tags.map((tag) => <span class="tag">{tag}</span>)}
-            </div>
-            <p class="">{description}</p>
-        </div>
-        <p class="">Leer más →</p>
+<article class="card">
+    <header class="card-header">
+        <p>Fecha: {date}</p>
+        <p>Tiempo de lectura: {readingTime}</p>
+        <p>Autor: {author}</p>
+        <figure class="card-image">
+            <img src={image.url} alt={image.alt} />
+        </figure>
+    </header>
+    <h3>{title}</h3>
+    <div class="tags">
+        {
+            tags.map((tag) => (
+                <a
+                    href={`/tags/${tag}`}
+                    class="tag"
+                    title="Ver publicaciones con la etiqueta '{tag}'"
+                >
+                    {tag}
+                </a>
+            ))
+        }
     </div>
-</a>
+    <p class="card-description">{description}</p>
+    <footer class="card-footer">
+        <a href={url} title="Leer el artículo completo">Leer más →</a>
+    </footer>
+</article>
 
 <style>
     @import url(../styles/global.css);
@@ -29,27 +39,11 @@ const { title, url, date, readingTime, description, author, image, tags } =
         width: 100%;
         outline: 1px solid var(--border-a);
         border-radius: 10px;
+        box-shadow: 0 0px 15px var(--box-shadow);
         padding: 2rem;
     }
 
     img {
         width: 100%;
-    }
-
-    .tags {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        gap: 12px;
-        justify-content: flex-start;
-    }
-
-    .tag {
-        color: var(--text-projects-span);
-        font-size: 1rem;
-        background-color: var(--background-span);
-        outline: 1px solid var(--border-a);
-        border-radius: 6px;
-        padding: 4px 8px;
     }
 </style>

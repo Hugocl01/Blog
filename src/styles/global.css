@@ -1,271 +1,275 @@
 :root {
-  /* Colores de fondos */
-  --background: #fff;
-  --background-span: #eee;
-  --background-a-hover: #777;
-  --background-loader: rgb(255, 255, 255);
+    /* Colores de fondos */
+    --background: #fff;
+    --background-span: #eee;
+    --background-a-hover: #777;
+    --background-loader: rgb(255, 255, 255);
 
-  /* Colores de textos */
-  --text-p: #555;
-  --text-h1: #000;
-  --text-h2: #000;
-  --text-h2-hero: #444;
-  --text-h2: #444;
-  --text-h3: #111;
-  --text-hero-span: #666;
-  --text-projects-span: #444;
-  --text-footer: #555;
-  --text-a: #777;
-  --text-a-projects: #111;
-  --text-a-hover: #eee;
-  --text-time: #555;
-  --text-li: #333;
+    /* Colores de textos */
+    --text-p: #555;
+    --text-h1: #000;
+    --text-h2: #000;
+    --text-h2-hero: #444;
+    --text-h2: #444;
+    --text-h3: #111;
+    --text-hero-span: #666;
+    --text-projects-span: #444;
+    --text-footer: #555;
+    --text-a: #777;
+    --text-a-projects: #111;
+    --text-a-hover: #eee;
+    --text-time: #555;
+    --text-li: #333;
 
-  /* Colores de sombras */
-  --shadow-projects-article: #f2f2f2;
-  --box-shadow: rgba(0, 0, 0, 0.1);
+    /* Colores de sombras */
+    --shadow-projects-article: #f2f2f2;
+    --box-shadow: rgba(0, 0, 0, 0.1);
 
-  /* Colores bordes */
-  --border-a: #eee;
+    /* Colores bordes */
+    --border-a: #eee;
 }
 
 [data-theme="light"] {
-  /* Colores de fondos */
-  --background: #fff;
-  --background-span: #eee;
-  --background-a-hover: #777;
-  --background-loader: rgb(255, 255, 255);
+    /* Colores de fondos */
+    --background: #fff;
+    --background-span: #eee;
+    --background-a-hover: #777;
+    --background-loader: rgb(255, 255, 255);
 
-  /* Colores de textos */
-  --text-p: #555;
-  --text-h1: #000;
-  --text-h2: #000;
-  --text-h2-hero: #444;
-  --text-h2: #444;
-  --text-h3: #111;
-  --text-hero-span: #666;
-  --text-projects-span: #444;
-  --text-footer: #555;
-  --text-a: #777;
-  --text-a-projects: #111;
-  --text-a-hover: #eee;
-  --text-time: #555;
-  --text-li: #333;
+    /* Colores de textos */
+    --text-p: #555;
+    --text-h1: #000;
+    --text-h2: #000;
+    --text-h2-hero: #444;
+    --text-h2: #444;
+    --text-h3: #111;
+    --text-hero-span: #666;
+    --text-projects-span: #444;
+    --text-footer: #555;
+    --text-a: #777;
+    --text-a-projects: #111;
+    --text-a-hover: #eee;
+    --text-time: #555;
+    --text-li: #333;
 
-  /* Colores de sombras */
-  --shadow-projects-article: #f2f2f2;
-  --box-shadow: rgba(0, 0, 0, 0.1);
+    /* Colores de sombras */
+    --shadow-projects-article: #f2f2f2;
+    --box-shadow: rgba(0, 0, 0, 0.1);
 
-  /* Colores bordes */
-  --border-a: #eee;
+    /* Colores bordes */
+    --border-a: #eee;
 }
 
 [data-theme="dark"] {
-  /* Colores de fondos */
-  --background: #111;
-  --background-span: #1f1f1f;
-  --background-a-hover: #fff;
-  --background-loader: rgba(17, 17, 17, 1);
+    /* Colores de fondos */
+    --background: #111;
+    --background-span: #1f1f1f;
+    --background-a-hover: #fff;
+    --background-loader: rgba(17, 17, 17, 1);
 
-  /* Colores de textos */
-  --text-p: #b1b1b1;
-  --text-h1: #fff;
-  --text-h2: #ddd;
-  --text-h2-hero: #bbb;
-  --text-h3: #fff;
-  --text-hero-span: #ccc;
-  --text-projects-span: #cecece;
-  --text-footer: #eee;
-  --text-a: #aaa;
-  --text-a-projects: #ddd;
-  --text-a-hover: #111;
-  --text-time: #b1b1b1;
-  --text-li: #ccc;
+    /* Colores de textos */
+    --text-p: #b1b1b1;
+    --text-h1: #fff;
+    --text-h2: #ddd;
+    --text-h2-hero: #bbb;
+    --text-h3: #fff;
+    --text-hero-span: #ccc;
+    --text-projects-span: #cecece;
+    --text-footer: #eee;
+    --text-a: #aaa;
+    --text-a-projects: #ddd;
+    --text-a-hover: #111;
+    --text-time: #b1b1b1;
+    --text-li: #ccc;
 
-  /* Colores de sombras */
-  --shadow-projects-article: #222;
-  --box-shadow: rgba(255, 255, 255, 0.1);
+    /* Colores de sombras */
+    --shadow-projects-article: #222;
+    --box-shadow: rgba(255, 255, 255, 0.1);
 
-  /* Colores bordes */
-  --border-a: #222;
+    /* Colores bordes */
+    --border-a: #222;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
-  line-height: 1.5;
-  background-color: var(--background);
+    margin: 0 auto;
+    width: 100%;
+    max-width: 80ch;
+    padding: 1rem;
+    line-height: 1.5;
+    background-color: var(--background);
 }
 
 h1 {
-  margin: 1rem 0;
-  font-size: 2.5rem;
-  color: var(--text-h1);
+    margin: 1rem 0;
+    font-size: 2.5rem;
+    color: var(--text-h1);
 }
 
 h2 {
-  margin: 1rem 0;
-  font-size: 1.5rem;
-  color: var(--text-h2);
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    color: var(--text-h2);
 }
 
 /* estilos de la barra de navegación*/
 .hamburger {
-  padding-right: 20px;
-  cursor: pointer;
+    padding-right: 20px;
+    cursor: pointer;
 }
 
 .hamburger .line {
-  display: block;
-  width: 40px;
-  height: 5px;
-  margin-bottom: 10px;
-  background-color: #ff9776;
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: #ff9776;
 }
 
 .nav-links {
-  width: 100%;
-  top: 5rem;
-  left: 48px;
-  background-color: #ff9776;
-  display: none;
+    width: 100%;
+    top: 5rem;
+    left: 48px;
+    background-color: #ff9776;
+    display: none;
 }
 
 .nav-links a {
-  display: block;
-  text-align: center;
-  padding: 10px 0;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  outline: 1px;
-  border-radius: 8px;
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    outline: 1px;
+    border-radius: 8px;
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
-  color: #000;
-  background-color: #ff9776;
+    color: #000;
+    background-color: #ff9776;
 }
 
 .expanded {
-  display: unset;
+    display: unset;
 }
 
 @media screen and (min-width: 636px) {
-  .nav-links {
-    display: flex;
-    gap: 16px;
-    justify-content: space-between;
-    width: auto;
-    background: none;
-  }
+    .nav-links {
+        display: flex;
+        gap: 16px;
+        justify-content: space-between;
+        width: auto;
+        background: none;
+    }
 
-  .nav-links a {
-    display: inline-block;
-    padding: 15px 20px;
-  }
+    .nav-links a {
+        display: inline-block;
+        padding: 15px 20px;
+    }
 
-  .hamburger {
-    display: none;
-  }
+    .hamburger {
+        display: none;
+    }
 }
 
 a {
-  text-decoration: none;
-  color: var(--text-a);
+    text-decoration: none;
+    color: var(--text-a);
 }
 
 ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 h1 {
-  font-size: 3.5rem;
-  color: var(--text-h1);
+    font-size: 3.5rem;
+    color: var(--text-h1);
 }
 
 h2 {
-  font-size: 2rem;
-  color: var(--text-h2);
+    font-size: 2rem;
+    color: var(--text-h2);
 }
 
 h3 {
-  font-size: 1.75rem;
-  color: var(--text-h3);
+    font-size: 1.75rem;
+    color: var(--text-h3);
 }
 
 h1,
 h2,
 h3,
 h4 {
-  margin: 0;
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+    margin: 0;
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
 }
 
 p {
-  color: var(--text-p);
-  font-size: 1.15rem;
-  line-height: 1.5;
-  margin: 0;
-  text-wrap: pretty;
+    color: var(--text-p);
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin: 0;
+    text-wrap: pretty;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 .posts {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: flex-start;
 }
 
 .tags {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 12px;
-  justify-content: start;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: start;
 }
 
 .tag {
-  color: var(--text-projects-span);
-  font-size: 1rem;
-  background-color: var(--background-span);
-  outline: 1px solid var(--border-a);
-  border-radius: 6px;
-  padding: 4px 8px;
+    color: var(--text-projects-span);
+    font-size: 1rem;
+    background-color: var(--background-span);
+    outline: 1px solid var(--border-a);
+    border-radius: 6px;
+    padding: 4px 8px;
 }
 
 .tag:hover {
-  background-color: var(--background-a-hover);
-  cursor: pointer;
+    background-color: var(--background-a-hover);
+    cursor: pointer;
 }

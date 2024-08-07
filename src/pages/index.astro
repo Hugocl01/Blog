@@ -1,17 +1,88 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CardPost from "../components/CardPost.astro";
-const allPosts = await Astro.glob('../pages/posts/*.md');
+const allPosts = await Astro.glob("../pages/posts/*.md");
 const pageTitle = "Blog";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
     <section>
-        <h1>Bienvenid@s a mi blog</h1>
-        <h2>Aquí comentaré todo mi proceso en el desarrollo web.</h2>
+        <h1>Bienvenid@s a Mi Blog</h1>
+        <div>
+            <h2>¿Por Qué Este Blog?</h2>
+            <p>
+                Hola a todos, bienvenidos a mi blog. Me llamo Hugo y soy un
+                apasionado del desarrollo web. He creado este espacio para
+                compartir mi viaje y experiencias en el mundo de la
+                programación. Mientras aprendo y descubro nuevas tecnologías,
+                quiero documentar todo lo que encuentro útil e interesante,
+                tanto para mi propio aprendizaje como para ayudar a otros que
+                estén en el mismo camino.
+            </p>
+        </div>
+        <div>
+            <h2>¿Qué Encontrarás Aquí?</h2>
+            <p>
+                En este blog, publicaré contenido relacionado con mis estudios
+                en desarrollo web y programación. Aquí hay algunas de las cosas
+                que puedes encontrar:
+            </p>
+            <ul>
+                <li>
+                    <span class="bold">Lecciones y Resúmenes de Clases:</span> Compartiré
+                    lo que aprendo en mis clases de desarrollo web. Esto incluirá
+                    desde conceptos básicos hasta temas más avanzados, siempre explicado
+                    de una manera clara y sencilla.
+                </li>
+                <li>
+                    <span class="bold">Tutoriales y Guías:</span> Crearé tutoriales
+                    paso a paso para ayudarte a entender y aplicar diferentes tecnologías
+                    y herramientas del desarrollo web. Ya sea que estés empezando
+                    o tengas algo de experiencia, espero que encuentres estos recursos
+                    útiles.
+                </li>
+                <li>
+                    <span class="bold">Proyectos y Ejemplos Prácticos:</span>
+                    Documentaré mis proyectos y ejercicios prácticos. Mostraré el
+                    proceso de desarrollo, los desafíos que enfrento y cómo los resuelvo.
+                    Esto no solo servirá como un portafolio, sino también como una
+                    fuente de inspiración y aprendizaje para ti.
+                </li>
+                <li>
+                    <span class="bold">Curiosidades y Novedades:</span> La programación
+                    es un campo en constante evolución. Compartiré noticias, tendencias
+                    y curiosidades que encuentre interesantes. Desde nuevas librerías
+                    y frameworks hasta cambios en el ecosistema de desarrollo web.
+                </li>
+                <li>
+                    <span class="bold">Recursos y Recomendaciones:</span> Compartiré
+                    libros, cursos, blogs y otras fuentes que encuentro valiosas
+                    en mi aprendizaje. La idea es crear una comunidad de aprendizaje
+                    donde todos podamos crecer juntos.
+                </li>
+            </ul>
+        </div>
     </section>
     <section class="posts">
-        {allPosts.slice(0, 3).map((post) => <CardPost url={post.url} title={post.frontmatter.title} date={post.frontmatter.pubDate} readingTime={post.frontmatter.readingTime} description={post.frontmatter.description} author={post.frontmatter.author} image={post.frontmatter.image} tags={post.frontmatter.tags}/>)}
+        <div>
+            <h2>Últimos posts</h2>
+        </div>
+        {
+            allPosts
+                .slice(0, 3) // Muestra los tres posts más recientes
+                .map((post) => (
+                    <CardPost
+                        url={post.url}
+                        title={post.frontmatter.title}
+                        date={post.frontmatter.pubDate}
+                        readingTime={post.frontmatter.readingTime}
+                        description={post.frontmatter.description}
+                        author={post.frontmatter.author}
+                        image={post.frontmatter.image}
+                        tags={post.frontmatter.tags}
+                    />
+                ))
+        }
         <div>
             <a href="blog">Ver todos los posts →</a>
         </div>

@@ -1,5 +1,6 @@
 ---
-const { title, url, date, readingTime, description, author, image, tags} = Astro.props;
+const { title, url, date, readingTime, description, author, image, tags } =
+    Astro.props;
 ---
 
 <a href={url} class="no-underline">
@@ -9,11 +10,11 @@ const { title, url, date, readingTime, description, author, image, tags} = Astro
                 <p>{date}</p>
                 <p>Tiempo de lectura: {readingTime}</p>
                 <p>{author}</p>
-                <img src={image.url} alt={image.alt}>
+                <img src={image.url} alt={image.alt} />
             </div>
-            <p class="">{title}</p>
-            <div class="">
-                {tags.map(tag => (<span>{tag}</span>))}
+            <h3 class="">{title}</h3>
+            <div class="tags">
+                {tags.map((tag) => <span class="tag">{tag}</span>)}
             </div>
             <p class="">{description}</p>
         </div>
@@ -22,14 +23,29 @@ const { title, url, date, readingTime, description, author, image, tags} = Astro
 </a>
 
 <style>
-    a {
-        text-decoration: none;
-    }
+    @import url(../styles/global.css);
 
-    .card{
+    .card {
         width: 100%;
-        outline: 1px solid white;
+        outline: 1px solid var(--border-a);
         border-radius: 10px;
         padding: 2rem;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 12px;
+        justify-content: flex-start;
+    }
+
+    .tag {
+        color: var(--text-projects-span);
+        font-size: 1rem;
+        background-color: var(--background-span);
+        outline: 1px solid var(--border-a);
+        border-radius: 6px;
+        padding: 4px 8px;
     }
 </style>

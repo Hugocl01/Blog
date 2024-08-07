@@ -13,7 +13,7 @@ const pageTitle = "Blog";
     <section class="flex flex-col gap-8">
         {allPosts.slice(0, 3).map((post) => <CardPost url={post.url} title={post.frontmatter.title} date={post.frontmatter.pubDate} readingTime={post.frontmatter.readingTime} description={post.frontmatter.description} author={post.frontmatter.author} image={post.frontmatter.image} tags={post.frontmatter.tags}/>)}
         <div>
-            <a href="blog">Ver todos los posts</a>
+            <a href="blog">Ver todos los posts →</a>
         </div>
     </section>
 </BaseLayout>

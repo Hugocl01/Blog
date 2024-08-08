@@ -36,11 +36,21 @@ const { title, url, date, readingTime, description, author, image, tags } =
     @import url(../styles/global.css);
 
     .card {
-        width: 100%;
-        outline: 1px solid var(--border-a);
+        background-color: var(--background);
+        border: 1px solid var(--border-a);
         border-radius: 10px;
-        box-shadow: 0 0px 15px var(--box-shadow);
+        box-shadow: 0 4px 15px var(--box-shadow);
+        overflow: hidden;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
         padding: 2rem;
+        color: var(--text-color);
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px var(--box-shadow);
     }
 
     img {

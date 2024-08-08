@@ -276,5 +276,6 @@ li {
 
 .tag:hover {
     background-color: var(--background-a-hover);
+    color: var(--text-a-hover);
     cursor: pointer;
 }

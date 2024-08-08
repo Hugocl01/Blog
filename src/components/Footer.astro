@@ -2,6 +2,60 @@
 
 ---
 
-<footer>
-    
+<footer class="footer">
+    <div class="nav">
+        <a href="index">Inicio</a>
+        <a href="blog">Blog</a>
+        <a href="tags">Etiquetas</a>
+    </div>
+    <div class="buttons">
+        <a href="https://www.linkedin.com/in/tu-perfil" target="_blank">LinkedIn</a>
+        <a href="https://github.com/tu-perfil" target="_blank" class="github">GitHub</a>
+    </div>
+    <div class="copyright">
+        &copy; 2024 Tu Nombre. Todos los derechos reservados.
+    </div>
 </footer>
+
+<style>
+    footer {
+        margin-top: 4rem;
+    }
+
+    .footer {
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footer .nav {
+        margin-bottom: 20px;
+    }
+
+    .footer .nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    .footer .buttons {
+        margin-bottom: 20px;
+    }
+
+    .footer .buttons a {
+        background-color: #0073b1;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        margin: 0 10px;
+        border-radius: 5px;
+    }
+
+    .footer .buttons a.github {
+        background-color: #333;
+    }
+
+    .footer .copyright {
+        font-size: 1rem;
+    }
+</style>

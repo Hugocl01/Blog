@@ -1,18 +1,25 @@
 ---
 const { title, url, date, readingTime, description, author, image, tags } =
     Astro.props;
+
+// Creo un objeto Date con la fecha de publicacion pubDate que llega a traves de date para formatear la fecha en español
+const formattedDate = new Date(date).toLocaleDateString("es-ES", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+});
 ---
 
 <article class="card">
     <header class="card-header">
-        <p>Fecha: {date}</p>
+        <h3>{title}</h3>
+        <p>Fecha: {formattedDate}</p>
         <p>Tiempo de lectura: {readingTime}</p>
         <p>Autor: {author}</p>
         <figure class="card-image">
             <img src={image.url} alt={image.alt} />
         </figure>
     </header>
-    <h3>{title}</h3>
     <div class="tags">
         {
             tags.map((tag) => (

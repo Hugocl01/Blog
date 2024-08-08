@@ -102,84 +102,24 @@ body {
     margin: 0 auto;
     width: 100%;
     max-width: 80ch;
-    padding: 1rem;
+    min-height: 100vh;
+    padding: 0 1rem;
     line-height: 1.5;
     background-color: var(--background);
 }
 
-h1 {
-    margin: 1rem 0;
-    font-size: 2.5rem;
-    color: var(--text-h1);
+body>header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    margin-bottom: 2.5rem;
 }
 
-h2 {
-    margin: 1rem 0;
-    font-size: 1.5rem;
-    color: var(--text-h2);
-}
-
-/* estilos de la barra de navegación*/
-.hamburger {
-    padding-right: 20px;
-    cursor: pointer;
-}
-
-.hamburger .line {
-    display: block;
-    width: 40px;
-    height: 5px;
-    margin-bottom: 10px;
-    background-color: #ff9776;
-}
-
-.nav-links {
-    width: 100%;
-    top: 5rem;
-    left: 48px;
-    background-color: #ff9776;
-    display: none;
-}
-
-.nav-links a {
-    display: block;
+body>footer {
+    color: var(--text-a);
+    padding: 2rem;
     text-align: center;
-    padding: 10px 0;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    outline: 1px;
-    border-radius: 8px;
-}
-
-.nav-links a:hover,
-.nav-links a:focus {
-    color: #000;
-    background-color: #ff9776;
-}
-
-.expanded {
-    display: unset;
-}
-
-@media screen and (min-width: 636px) {
-    .nav-links {
-        display: flex;
-        gap: 16px;
-        justify-content: space-between;
-        width: auto;
-        background: none;
-    }
-
-    .nav-links a {
-        display: inline-block;
-        padding: 15px 20px;
-    }
-
-    .hamburger {
-        display: none;
-    }
+    margin-top: 2.5rem;
 }
 
 *,
@@ -207,7 +147,7 @@ h1,
 h2,
 h3,
 h4 {
-    margin: 0;
+    margin: 0px;
     font-family:
         system-ui,
         -apple-system,
@@ -228,6 +168,7 @@ p {
     line-height: 1.5;
     margin: 0;
     text-wrap: pretty;
+    hyphens: auto;
 }
 
 a {
@@ -236,7 +177,7 @@ a {
 }
 
 ul {
-    margin: 0px 24px ;
+    margin: 0px 24px;
     padding: 0;
 }
 
@@ -278,4 +219,73 @@ li {
     background-color: var(--background-a-hover);
     color: var(--text-a-hover);
     cursor: pointer;
+}
+
+/* estilos de la barra de navegación*/
+.hamburger {
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: #ff9776;
+}
+
+.nav-links {
+    width: 100%;
+    top: 5rem;
+    left: 48px;
+    background-color: #ff9776;
+    display: none;
+}
+
+.nav-links a {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    outline: 1px;
+    border-radius: 0 0 10px 10px;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    color: var(--text-a-hover);
+    background-color: var(--background-a-hover);
+}
+
+.expanded {
+    display: unset;
+}
+
+@media screen and (min-width: 636px) {
+    body>header {
+        background-color: var(--background);
+        outline: 1px solid var(--box-shadow);
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 15px var(--box-shadow);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 16px;
+        justify-content: space-between;
+        width: auto;
+        background: none;
+    }
+
+    .nav-links a {
+        display: inline-block;
+        padding: 15px 20px;
+    }
+
+    .hamburger {
+        display: none;
+    }
 }

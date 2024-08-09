@@ -191,6 +191,11 @@ li {
     margin: 16px 0;
 }
 
+img {
+    width: 100%;
+    border-radius: 12px;
+}
+
 .bold {
     font-weight: bold;
 }
@@ -203,11 +208,10 @@ li {
 }
 
 .tags {
+    margin: 1rem 0;
     display: flex;
+    gap: 0.5rem;
     flex-wrap: wrap;
-    flex-direction: row;
-    gap: 12px;
-    justify-content: start;
 }
 
 .tag {
@@ -216,10 +220,14 @@ li {
     background-color: var(--background-span);
     outline: 1px solid var(--border-a);
     border-radius: 6px;
-    padding: 4px 8px;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    transition: background-color 0.3s ease;
 }
 
-.tag:hover {
+.tag:hover,
+.tag:focus {
     background-color: var(--background-a-hover);
     color: var(--text-a-hover);
     cursor: pointer;

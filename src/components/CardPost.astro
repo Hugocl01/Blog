@@ -1,8 +1,7 @@
 ---
 import { Image } from "astro:assets";
 
-const { title, url, date, readingTime, description, author, image, tags } =
-    Astro.props;
+const { title, url, date, readingTime, description, image, tags } = Astro.props;
 
 // Creo un objeto Date con la fecha de publicacion pubDate que llega a traves de date para formatear la fecha en español
 const formattedDate = new Date(date).toLocaleDateString("es-ES", {
@@ -14,10 +13,11 @@ const formattedDate = new Date(date).toLocaleDateString("es-ES", {
 
 <article class="card">
     <header class="card-header">
-        <h3>{title}</h3>
-        <p>Fecha: {formattedDate}</p>
-        <p>Tiempo de lectura: {readingTime}</p>
-        <p>Autor: {author}</p>
+        <h3 class="card-title">{title}</h3>
+        <div class="card-meta">
+            <p class="card-date">📅 {formattedDate}</p>
+            <p class="card-reading-time">⏳ {readingTime}</p>
+        </div>
         <figure class="card-image">
             <Image
                 src={image.url}
@@ -26,8 +26,8 @@ const formattedDate = new Date(date).toLocaleDateString("es-ES", {
                 widths={[240, 540, 720, image.width]}
                 height={540}
                 sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${image.width}px`}
-                loading="eager"
-                format="avif"
+                decoding="async"
+                loading="lazy"
             />
         </figure>
     </header>
@@ -37,42 +37,116 @@ const formattedDate = new Date(date).toLocaleDateString("es-ES", {
                 <a
                     href={`/tags/${tag}`}
                     class="tag"
-                    title="Ver publicaciones con la etiqueta '{tag}'"
+                    title={"Ver publicaciones con la etiqueta " + tag}
+                    onclick="event.stopPropagation();"
                 >
-                    {tag}
+                    #{tag}
                 </a>
             ))
         }
     </div>
     <p class="card-description">{description}</p>
     <footer class="card-footer">
-        <a href={url} title="Leer el artículo completo">Leer más →</a>
+        <a
+            href={url}
+            class="card-link"
+            title="Leer el artículo completo"
+            onclick="event.stopPropagation();">Leer más →</a
+        >
     </footer>
 </article>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Selecciona todos los elementos con la clase "card"
+        let articles = document.querySelectorAll(".card");
+
+        // Recorre cada artículo y añade el evento de clic
+        articles.forEach(function (article) {
+            // Selecciona el elemento <a> con la clase "card-link" dentro del artículo actual
+            let urlElement = article.querySelector(".card-link");
+
+            // Verificar si el elemento .card-link existe y tiene un href válido
+            if (urlElement && urlElement.hasAttribute("href")) {
+                article.addEventListener("click", function () {
+                    window.location.href = urlElement.getAttribute("href");
+                });
+            }
+        });
+    });
+</script>
 
 <style>
     @import url(../styles/global.css);
 
     .card {
         background-color: var(--background);
-        border: 1px solid var(--border-a);
-        border-radius: 10px;
-        box-shadow: 0 4px 15px var(--box-shadow);
+        border: 1px solid var(--box-shadow);
+        border-radius: 12px;
+        box-shadow: 0 6px 20px var(--box-shadow);
         overflow: hidden;
         transition:
             transform 0.3s ease,
             box-shadow 0.3s ease;
-        padding: 2rem;
+        padding: 1.5rem;
         color: var(--text-color);
-        margin: 0;
+        margin: 1rem 0;
     }
 
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 30px var(--box-shadow);
+    .card:hover,
+    .card:focus {
+        cursor: pointer;
+        transform: translateY(-8px);
+        box-shadow: 0 10px 30px var(--box-shadow);
     }
 
-    img {
-        width: 100%;
+    .card-header {
+        margin-bottom: 1rem;
+    }
+
+    .card-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--text-h3);
+        margin-bottom: 0.5rem;
+    }
+
+    .card-meta {
+        font-size: 0.875rem;
+        color: var(--text-color);
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .card-image {
+        margin: 1rem 0;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .card-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--text-p);
+        margin-bottom: 1.5rem;
+    }
+
+    .card-footer {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .card-link {
+        font-size: 1rem;
+        color: #007acc;
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.3s ease;
+    }
+
+    .card-link:hover,
+    .card-link:focus {
+        color: #005a99;
     }
 </style>

@@ -2,19 +2,17 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Mi primera publicación en el blog'
 pubDate: 2022-07-01
-readingTime : 3 min
-description: 'Este es la primera publicación de mi nuevo blog Astro.'
+readingTime : 5 min
+description: 'Primera publicación en la que hablare de como nacio este proyecto.'
 author: Hugo Cayón Laso
 image:
-    url: 'https://docs.astro.build/assets/full-logo-light.png'
+    url: 'https://astro.build/assets/press/astro-icon-light-gradient.svg'
     alt: 'El logotipo completo de Astro.'
 tags: ["Astro", "Bloguear", "Aprender en público"]
 ---
 # Mi primera publicación en el blog
 
-Publicado el: 2022-07-01
-
-¡Bienvenido a mi _nuevo blog_ sobre el aprendizaje de Astro! Aquí, voy a compartir mi viaje de aprendizaje a medida que construyo un nuevo sitio web.
+¡Bienvenido a mi _nuevo blog_! Aquí voy a compartir mi viaje de aprendizaje en el mundo de la programación.
 
 ## Lo que he conseguido
 

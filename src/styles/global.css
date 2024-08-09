@@ -91,6 +91,8 @@
 }
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -147,7 +149,6 @@ h1,
 h2,
 h3,
 h4 {
-    margin: 0px;
     font-family:
         system-ui,
         -apple-system,
@@ -162,11 +163,14 @@ h4 {
         sans-serif;
 }
 
+article {
+    margin: 3rem 0;
+}
+
 p {
     color: var(--text-p);
     font-size: 1.15rem;
     line-height: 1.5;
-    margin: 0;
     text-wrap: pretty;
     hyphens: auto;
 }

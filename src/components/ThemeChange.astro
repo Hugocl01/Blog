@@ -94,7 +94,7 @@
         color: var(--text-a);
     }
 
-    #checkbox:checked + .button:hover  {
+    #checkbox:checked + .button:hover {
         color: var(--text-a-hover);
         background-color: var(--background-a-hover);
     }
@@ -128,35 +128,41 @@
             "(prefers-color-scheme: dark)"
         ).matches;
 
-        if (prefersDarkMode) {
-            body.setAttribute("data-theme", "dark");
-            checkbox.checked = true;
-        } else {
-            body.setAttribute("data-theme", "light");
-            checkbox.checked = false;
+        // Si no hay preferencia guardada, usa la preferencia del sistema
+        if (!localStorage.getItem("theme")) {
+            if (prefersDarkMode) {
+                body.setAttribute("data-theme", "dark");
+                checkbox.checked = true;
+            } else {
+                body.setAttribute("data-theme", "light");
+                checkbox.checked = false;
+            }
         }
     }
 
-    // Llama a la función para aplicar el tema antes de que la página esté completamente cargada
-    applySystemTheme();
+    // Función para aplicar el tema almacenado
+    function applyStoredTheme() {
+        const theme = localStorage.getItem("theme");
+
+        if (theme) {
+            body.setAttribute("data-theme", theme);
+            checkbox.checked = theme === "dark";
+        } else {
+            applySystemTheme(); // Si no hay preferencia almacenada, aplica el tema del sistema
+        }
+    }
+
+    // Llama a la función para aplicar el tema almacenado antes de que la página esté completamente cargada
+    applyStoredTheme();
 
     // Agrega un escuchador de eventos "DOMContentLoaded" para el resto del código
     document.addEventListener("DOMContentLoaded", function () {
         // Agrega un escuchador de eventos "change" al elemento checkbox
         checkbox.addEventListener("change", function () {
-            // Verifica si la casilla de verificación está marcada
-            if (this.checked) {
-                // Si está marcada, establece el atributo "data-theme" del elemento "body" a "dark"
-                body.setAttribute("data-theme", "dark");
-            } else {
-                // Si no está marcada, establece el atributo "data-theme" del elemento "body" a "light"
-                body.setAttribute("data-theme", "light");
-            }
+            const newTheme = this.checked ? "dark" : "light";
+            // Establece el atributo "data-theme" del elemento "body" y guarda la preferencia en localStorage
+            body.setAttribute("data-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
         });
-
-        // Agrega un escuchador de eventos para detectar cambios en la preferencia de color del sistema
-        window
-            .matchMedia("(prefers-color-scheme: dark)")
-            .addEventListener("change", applySystemTheme);
     });
 </script>

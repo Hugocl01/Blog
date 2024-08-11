@@ -1,19 +1,47 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
-const { frontmatter } = Astro.props;
+import BaseLayout from "./BaseLayout.astro"; // Importa el layout base para la página
+import { Picture } from "astro:assets"; // Importa el componente Picture para manejar imágenes
+const { frontmatter } = Astro.props; // Extrae las propiedades de frontmatter
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-    <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
-    <p><em>{frontmatter.description}</em></p>
-    <p>Escrito por: {frontmatter.author}</p>
-    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
-    <div class="tags">
-        {
-            frontmatter.tags.map((tag) => (
-                <a href={`/tags/${tag}`} class="tag">#{tag}</a>
-            ))
-        }
-    </div>
-    <slot />
+
+    {/* Encabezado del artículo */}
+    <header>
+        <h1>{frontmatter.title}</h1> {/* Título del artículo */}
+        <p>{frontmatter.pubDate.toString().slice(0, 10)}</p> {/* Fecha de publicación */}
+        <p>{frontmatter.readingTime}</p> {/* Tiempo estimado de lectura */}
+        <p><em>{frontmatter.description}</em></p> {/* Descripción del artículo */}
+        <p>Escrito por: {frontmatter.author}</p> {/* Autor del artículo */}
+    </header>
+
+    {/* Imagen destacada */}
+    <section class="featured-image">
+        <Picture
+            src={frontmatter.image.url}
+            alt={frontmatter.image.alt}
+            format="avif"
+            inferSize={true}
+            widths={frontmatter.image.width}
+            decoding="async"
+            loading="lazy"
+        />
+    </section>
+
+    {/* Contenido del artículo */}
+    <article>
+        <slot /> {/* El contenido del artículo se insertará aquí */}
+    </article>
+
+    {/* Etiquetas del artículo */}
+    <footer>
+        <div class="tags">
+            {frontmatter.tags.map((tag) => (
+                <a href={`/tags/${tag}`} class="tag">
+                    #{tag}
+                </a>
+            ))}
+        </div>
+    </footer>
+    
 </BaseLayout>

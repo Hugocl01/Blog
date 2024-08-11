@@ -110,14 +110,16 @@ body {
     background-color: var(--background);
 }
 
-body>header {
+/* - Estilo para el header principal */
+.main-header {
     position: sticky;
     top: 0;
     z-index: 100;
     margin-bottom: 2.5rem;
 }
 
-body>footer {
+/* - Estilo para el footer principal */
+.main-footer {
     color: var(--text-a);
     padding: 2rem;
     text-align: center;
@@ -281,7 +283,7 @@ img {
 }
 
 @media screen and (min-width: 636px) {
-    body>header {
+    .main-header {
         background-color: var(--background);
         outline: 1px solid var(--box-shadow);
         border-radius: 0 0 10px 10px;

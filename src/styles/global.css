@@ -282,6 +282,26 @@ img {
     display: unset;
 }
 
+pre {
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+pre::-webkit-scrollbar {
+    height: 8px;
+    /* Altura de la barra de desplazamiento horizontal */
+}
+
+pre::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 12px;
+}
+
+code {
+    font-size: 0.8rem;
+}
+
 @media screen and (min-width: 636px) {
     .main-header {
         background-color: var(--background);

@@ -24,8 +24,8 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 
-<BaseLayout pageTitle={tag}>
-    <p>Posts etiquetados con {tag}</p>
+<BaseLayout pageTitle={"Posts con la etiqueta " + tag}>
+    <h1>Posts etiquetados con {tag}</h1>
     <section class="posts">
         {
             posts.map((post) => (

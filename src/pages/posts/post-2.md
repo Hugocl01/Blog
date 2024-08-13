@@ -40,10 +40,11 @@ En las siguientes pantallas, decidí usar una plantilla vacía "Empty", que no u
 
 ## 2. Creación de Layouts
 
-En este paso, creo los layouts, que son los componentes esenciales que definen la estructura general que rodea a todo el contenido de nuestra web. Decidí crear dos layouts: uno para toda la página, en el que están la etiqueta &lt;head&gt; con los &lt;meta&gt; y los &lt;link&gt;.
+En este paso, creo los layouts, que son los componentes esenciales que definen la estructura general que rodea a todo el contenido de nuestra web. Decidí crear los dos layouts siguientes:
 
+### 2.1 BaseLayout.astro
 
-BaseLayout.astro
+Utilizado para toda la página, en el que están la etiqueta &lt;head&gt; con los &lt;meta&gt; y los &lt;link&gt;.
 
 ```astro
 ---
@@ -74,9 +75,9 @@ const { pageTitle } = Astro.props;
 </html>
 ```
 
-El siguiente layout lo uso para dar formato a cada post escrito en Markdown y este es envuelto por el anterior.
+### 2.2 MarkdownPostLayout.astro
 
-MarkdownPostLayout.astro
+El siguiente layout lo uso para dar formato a cada post escrito en Markdown y este es envuelto por el layout anterior.
 
 ```astro
 ---
@@ -126,4 +127,56 @@ const { frontmatter } = Astro.props; // Extrae las propiedades de frontmatter
     </footer>
     
 </BaseLayout>
+```
+
+## 3. Componentes
+
+A continuación, veremos los diferentes componentes que he creado para mi blog con Astro. Cada componente tiene un rol específico en la estructura y funcionalidad del sitio.
+
+### 3.1 CardPost.astro
+
+El componente `CardPost.astro` se utiliza para mostrar un resumen de las publicaciones del blog. Cada tarjeta incluye un título, una imagen destacada y un breve resumen, lo que facilita la navegación por diferentes entradas del blog.
+
+```astro
+
+```
+
+### 3.2 Footer.astro
+
+El componente `Footer.astro` maneja el pie de página del sitio, donde se incluyen los derechos de autor y enlaces a mis redes sociales.
+
+```astro
+
+```
+
+### 3.3 Hamburger.astro
+
+El componente `Hamburger.astro` añade un menú tipo "hamburguesa" que es especialmente útil para la navegación en dispositivos móviles. Este menú se despliega para mostrar enlaces a diferentes secciones del sitio cuando se hace clic en el ícono.
+
+```astro
+
+```
+
+### 3.4 Header.astro
+
+El componente `Header.astro` se encarga de la cabecera del sitio, que incluye la barra de navegación principal y, en algunos casos, un logo o el menú hamburguesa en dispositivos móviles.
+
+```astro
+
+```
+
+### 3.5 Navigation.astro
+
+El componente `Navigation.astro` es una versión más completa de la navegación, que se puede utilizar para secciones específicas o para tener un control más detallado sobre los enlaces mostrados en el sitio.
+
+```astro
+
+```
+
+### 3.6 ThemeChange.astro
+
+El componente `ThemeChange.astro` permite a los usuarios cambiar entre el tema claro y el tema oscuro. Este componente mejora la accesibilidad y personalización del sitio, proporcionando una mejor experiencia de usuario.
+
+```astro
+
 ```

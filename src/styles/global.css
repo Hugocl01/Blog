@@ -124,14 +124,6 @@ body {
     margin-bottom: 2.5rem;
 }
 
-/* - Estilo para el footer principal */
-.main-footer {
-    color: var(--text-a);
-    padding: 2rem;
-    text-align: center;
-    margin-top: 2.5rem;
-}
-
 h1 {
     font-size: 3.5rem;
     color: var(--text-h1);

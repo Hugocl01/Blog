@@ -44,7 +44,7 @@ En este paso, creo los layouts, que son los componentes esenciales que definen l
 
 ### 2.1 BaseLayout.astro
 
-Utilizado para toda la página, en el que están la etiqueta &lt;head&gt; con los &lt;meta&gt; y los &lt;link&gt;.
+El layout `BaseLayout.astro` es utilizado para toda la página, en el que están la etiqueta &lt;head&gt; con los &lt;meta&gt; y los &lt;link&gt;.
 
 ```astro
 ---
@@ -77,7 +77,7 @@ const { pageTitle } = Astro.props;
 
 ### 2.2 MarkdownPostLayout.astro
 
-El siguiente layout lo uso para dar formato a cada post escrito en Markdown y este es envuelto por el layout anterior.
+EL layout `MarkdownPostLayout.astro` lo uso para dar formato a cada post escrito en Markdown y este es envuelto por el layout anterior.
 
 ```astro
 ---
@@ -162,7 +162,17 @@ El componente `Hamburger.astro` añade un menú tipo "hamburguesa" que es especi
 El componente `Header.astro` se encarga de la cabecera del sitio, que incluye la barra de navegación principal y, en algunos casos, un logo o el menú hamburguesa en dispositivos móviles.
 
 ```astro
+---
+import Hamburger from "./Hamburger.astro";
+import Navigation from "./Navigation.astro";
+---
 
+<header class="main-header">
+    <nav>
+        <Hamburger />
+        <Navigation />
+    </nav>
+</header>
 ```
 
 ### 3.5 Navigation.astro
@@ -170,7 +180,15 @@ El componente `Header.astro` se encarga de la cabecera del sitio, que incluye la
 El componente `Navigation.astro` es una versión más completa de la navegación, que se puede utilizar para secciones específicas o para tener un control más detallado sobre los enlaces mostrados en el sitio.
 
 ```astro
+---
 
+---
+
+<div class="nav-links">
+    <a href="/">Inicio</a>
+    <a href="/blog">Blog</a>
+    <a href="/tags">Etiquetas</a>
+</div>
 ```
 
 ### 3.6 ThemeChange.astro

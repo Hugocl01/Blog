@@ -213,6 +213,7 @@ img {
     justify-content: flex-start;
 }
 
+/* -  Estilo de las tags */
 .tags {
     margin: 1rem 0;
     display: flex;
@@ -239,7 +240,7 @@ img {
     cursor: pointer;
 }
 
-/* estilos de la barra de navegación*/
+/* - Estilos de la barra de navegación*/
 .hamburger {
     padding-right: 20px;
     cursor: pointer;
@@ -269,7 +270,7 @@ img {
     font-size: 1.2rem;
     font-weight: bold;
     outline: 1px;
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px;
 }
 
 .nav-links a:hover,
@@ -282,6 +283,7 @@ img {
     display: unset;
 }
 
+/* - Estilos bloques de codigo */
 pre {
     padding: 1rem;
     border-radius: 10px;
@@ -302,6 +304,7 @@ code {
     font-size: 0.8rem;
 }
 
+/* - Estilos para pantallas grandes*/
 @media screen and (min-width: 636px) {
     .main-header {
         background-color: var(--background);
@@ -321,6 +324,7 @@ code {
     .nav-links a {
         display: inline-block;
         padding: 15px 20px;
+        border-radius: 0 0 10px 10px;
     }
 
     .hamburger {

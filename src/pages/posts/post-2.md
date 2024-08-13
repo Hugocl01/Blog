@@ -138,7 +138,82 @@ A continuación, veremos los diferentes componentes que he creado para mi blog c
 El componente `CardPost.astro` se utiliza para mostrar un resumen de las publicaciones del blog. Cada tarjeta incluye un título, una imagen destacada y un breve resumen, lo que facilita la navegación por diferentes entradas del blog.
 
 ```astro
+---
+import { Picture } from "astro:assets";
 
+const { title, url, date, readingTime, description, image, tags } = Astro.props;
+
+// Creo un objeto Date con la fecha de publicacion pubDate que llega a traves de date para formatear la fecha en español
+const formattedDate = new Date(date).toLocaleDateString("es-ES", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+});
+---
+
+<article class="card">
+    <header class="card-header">
+        <h2 class="card-title">{title}</h2>
+        <div class="card-meta">
+            <p class="card-date">📅 {formattedDate}</p>
+            <p class="card-reading-time">⏳ {readingTime}</p>
+        </div>
+        <figure class="card-image">
+            <Picture
+                src={image.url}
+                alt={image.alt}
+                format="avif"
+                inferSize={true}
+                widths={image.width}
+                decoding="async"
+                loading="lazy"
+            />
+        </figure>
+    </header>
+    <div class="tags">
+        {
+            tags.map((tag) => (
+                <a
+                    href={`/tags/${tag}`}
+                    class="tag"
+                    title={"Ver publicaciones con la etiqueta " + tag}
+                    onclick="event.stopPropagation();"
+                >
+                    #{tag}
+                </a>
+            ))
+        }
+    </div>
+    <p class="card-description">{description}</p>
+    <footer class="card-footer">
+        <a
+            href={url}
+            class="card-link"
+            title="Leer el artículo completo"
+            onclick="event.stopPropagation();">Leer más →</a
+        >
+    </footer>
+</article>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Selecciona todos los elementos con la clase "card"
+        let articles = document.querySelectorAll(".card");
+
+        // Recorre cada artículo y añade el evento de clic
+        articles.forEach(function (article) {
+            // Selecciona el elemento <a> con la clase "card-link" dentro del artículo actual
+            let urlElement = article.querySelector(".card-link");
+
+            // Verificar si el elemento .card-link existe y tiene un href válido
+            if (urlElement && urlElement.hasAttribute("href")) {
+                article.addEventListener("click", function () {
+                    window.location.href = urlElement.getAttribute("href");
+                });
+            }
+        });
+    });
+</script>
 ```
 
 ### 3.2 Footer.astro

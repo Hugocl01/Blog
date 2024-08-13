@@ -2,15 +2,20 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CardPost from "../components/CardPost.astro";
 
-const allPosts = await Astro.glob("../pages/posts/*.md");
 const pageTitle = "Todos los posts";
+
+// - Guardo todos los posts
+const allPosts = await Astro.glob("../pages/posts/*.md");
+
+// - Invierto el orden de los post
+const reversedPosts = allPosts.reverse();
 ---
 
 <BaseLayout pageTitle={pageTitle}>
     <h1>Todas las publicaciones</h1>
     <section class="posts">
         {
-            allPosts.map((post) => (
+            reversedPosts.map((post) => (
                 <CardPost
                     url={post.url}
                     title={post.frontmatter.title}

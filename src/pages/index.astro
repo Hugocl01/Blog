@@ -1,8 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CardPost from "../components/CardPost.astro";
+
+const pageTitle = "Inicio";
+
+// - Guardo todos los posts
 const allPosts = await Astro.glob("../pages/posts/*.md");
-const pageTitle = "Blog";
+
+// - Invierto el orden de los post
+const reversedPosts = allPosts.reverse();
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -76,7 +82,7 @@ const pageTitle = "Blog";
             <h2>Últimos posts</h2>
         </div>
         {
-            allPosts
+            reversedPosts
                 .slice(0, 3) // Muestra los tres posts más recientes
                 .map((post) => (
                     <CardPost

@@ -10,8 +10,6 @@ image:
     alt: 'Logo del Blog'
 tags: ["Desarrollo web"]
 ---
-# Mi Primera Publicación en el Blog
-
 ¡Bienvenido a mi _nuevo blog_! Aquí voy a compartir mi viaje de aprendizaje en el mundo de la programación.
 
 Si estás leyendo esto, es porque al fin este proyecto está en marcha, ¡qué ilusión! 😊

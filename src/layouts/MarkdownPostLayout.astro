@@ -26,22 +26,19 @@ const { frontmatter } = Astro.props; // Extrae las propiedades de frontmatter
             decoding="async"
             loading="lazy"
         />
-    </section>
-
-    {/* Contenido del artículo */}
-    <article>
-        <slot /> {/* El contenido del artículo se insertará aquí */}
-    </article>
-
-    {/* Etiquetas del artículo */}
-    <footer>
+        {/* Etiquetas del artículo */}
         <div class="tags">
             {frontmatter.tags.map((tag) => (
                 <a href={`/tags/${tag}`} class="tag">
                     #{tag}
                 </a>
             ))}
-        </div>
-    </footer>
+        </div>  
+    </section>
+
+    {/* Contenido del artículo */}
+    <article>
+        <slot /> {/* El contenido del artículo se insertará aquí */}
+    </article>
     
 </BaseLayout>

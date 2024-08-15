@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.7",
+    "@fontsource-variable/overpass": "^5.0.19",
     "astro": "^4.13.1"
   }
 }

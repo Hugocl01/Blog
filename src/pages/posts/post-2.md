@@ -91,10 +91,10 @@ const { frontmatter } = Astro.props; // Extrae las propiedades de frontmatter
     {/* Encabezado del artículo */}
     <header>
         <h1>{frontmatter.title}</h1> {/* Título del artículo */}
-        <p>{frontmatter.pubDate.toString().slice(0, 10)}</p> {/* Fecha de publicación */}
-        <p>{frontmatter.readingTime}</p> {/* Tiempo estimado de lectura */}
         <p><em>{frontmatter.description}</em></p> {/* Descripción del artículo */}
-        <p>Escrito por: {frontmatter.author}</p> {/* Autor del artículo */}
+        <p>Escrito por: {frontmatter.author}{/* Autor del artículo */}</p>
+        <p>{frontmatter.pubDate.toString().slice(0, 10)}</p> {/* Fecha de publicación */}
+        <p>Tiempo de lectura: {frontmatter.readingTime}</p> {/* Tiempo estimado de lectura */}
     </header>
 
     {/* Imagen destacada */}

@@ -10,7 +10,6 @@
     --text-h1: #000;
     --text-h2: #000;
     --text-h2-hero: #444;
-    --text-h2: #444;
     --text-h3: #111;
     --text-hero-span: #666;
     --text-projects-span: #444;
@@ -41,7 +40,6 @@
     --text-h1: #000;
     --text-h2: #000;
     --text-h2-hero: #444;
-    --text-h2: #444;
     --text-h3: #111;
     --text-hero-span: #666;
     --text-projects-span: #444;
@@ -125,13 +123,13 @@ body {
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: var(--text-h1);
     margin-bottom: 2rem;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2.25rem;
     color: var(--text-h2);
     margin-bottom: 1rem;
 }
@@ -161,7 +159,7 @@ h4 {
 
 p {
     color: var(--text-p);
-    font-size: 1.15rem;
+    font-size: 1rem;
     line-height: 1.5;
     text-wrap: pretty;
     hyphens: auto;

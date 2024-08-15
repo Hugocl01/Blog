@@ -8,7 +8,7 @@ image:
     alt: "Miniatura de los arcos de Astro."
 pubDate: 2024-08-12
 readingTime: 5 min
-tags: ["Astro", "Bloguear", "Desarrollo web"]
+tags: ["Desarrollo web", "Astro"]
 ---
 
 ## Introducción

@@ -8,7 +8,7 @@ author: Hugo Cayón Laso
 image:
     url: 'https://astro.build/assets/press/astro-icon-light-gradient.svg'
     alt: 'Logo del Blog'
-tags: ["Astro", "Bloguear", "Aprender en público"]
+tags: ["Desarrollo web"]
 ---
 # Mi Primera Publicación en el Blog
 

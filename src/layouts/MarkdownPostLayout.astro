@@ -15,8 +15,8 @@ const { frontmatter } = Astro.props; // Extrae las propiedades de frontmatter
         <p>Tiempo de lectura: {frontmatter.readingTime}</p> {/* Tiempo estimado de lectura */}
     </header>
 
-    {/* Imagen destacada */}
     <section>
+        {/* Imagen destacada */}
         <Picture
             src={frontmatter.image.url}
             alt={frontmatter.image.alt}

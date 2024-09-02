@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Mi primera publicación en el blog'
-pubDate: 2022-07-01
+pubDate: 2024-07-01
 readingTime : 5 min
 description: 'Primera publicación en la que hablare de como nacio este proyecto.'
 author: Hugo Cayón Laso

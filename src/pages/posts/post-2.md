@@ -7,7 +7,7 @@ image:
     url: "https://docs.astro.build/assets/arc.webp"
     alt: "Miniatura de los arcos de Astro."
 pubDate: 2024-08-12
-readingTime: 5 min
+readingTime: 6 min
 tags: ["Desarrollo web", "Astro"]
 ---
 

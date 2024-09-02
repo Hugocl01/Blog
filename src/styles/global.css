@@ -257,7 +257,7 @@ img {
 pre {
     padding: 1rem;
     border-radius: 10px;
-    margin: 2rem 0;
+    margin: 1.5rem 0;
 }
 
 pre::-webkit-scrollbar {
@@ -289,10 +289,12 @@ code {
         justify-content: space-between;
         width: auto;
         background: none;
+        padding: 1rem;
     }
 
     .nav-links a {
         display: inline-block;
+        font-size: 1.5rem;
         padding: 4px 8px;
         border-radius: 10px;
     }

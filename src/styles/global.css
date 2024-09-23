@@ -13,6 +13,7 @@
     --text-h2: #000;
     --text-h2-hero: #444;
     --text-h3: #111;
+    --text-h4: #111;
     --text-hero-span: #666;
     --text-projects-span: #444;
     --text-footer: #555;
@@ -43,6 +44,7 @@
     --text-h2: #000;
     --text-h2-hero: #444;
     --text-h3: #111;
+    --text-h4: #111;
     --text-hero-span: #666;
     --text-projects-span: #444;
     --text-footer: #555;
@@ -73,6 +75,7 @@
     --text-h2: #ddd;
     --text-h2-hero: #bbb;
     --text-h3: #fff;
+    --text-h4: #fff;
     --text-hero-span: #ccc;
     --text-projects-span: #cecece;
     --text-footer: #eee;
@@ -139,6 +142,11 @@ h2 {
 h3 {
     font-size: 1.75rem;
     color: var(--text-h3);
+}
+
+h4 {
+    font-size: 1.25rem;
+    color: var(--text-h4);
 }
 
 h1,

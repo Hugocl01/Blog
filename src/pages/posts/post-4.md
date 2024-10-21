@@ -140,14 +140,118 @@ require 'vendor/autoload.php';
 
 Este archivo se encuentra en la carpeta vendor, que es donde Composer almacena las librerías descargadas.
 
-### Comandos basico de Composer
+### Comandos de Composer
 
-Actualizando dependencias
+Estos son los comandos más útiles de Composer con comentarios para entender qué hace cada uno de ellos:
 
-Para mantener tus librerías actualizadas, simplemente ejecuta el siguiente comando:
+#### composer init
+
+Descripción: Inicia un asistente interactivo para crear un archivo composer.json, que es el archivo de configuración principal para manejar las dependencias de un proyecto PHP.
 
 ```bash
+composer init
+```
+
+#### composer install
+
+Descripción: Instala todas las dependencias listadas en el archivo composer.json. También genera el directorio vendor/ donde se guardan las librerías descargadas. Este comando es clave cuando clonas un proyecto que ya tiene su archivo composer.json.
+
+```bash
+composer install
+```
+
+#### composer require <paquete>
+
+Descripción: Añade una nueva dependencia al proyecto. Este comando descarga el paquete indicado desde el repositorio de Composer (Packagist) y lo añade automáticamente al archivo composer.json bajo la sección require.
+
+```bash
+composer require guzzlehttp/guzzle
+```
+
+#### composer update
+
+Descripción: Actualiza las dependencias del proyecto a las versiones más recientes permitidas por las restricciones definidas en composer.json. Es útil cuando quieres asegurarte de estar utilizando las versiones más recientes de las librerías.
+
+ ```bash
 composer update
 ```
 
-Composer revisará las versiones más recientes de las dependencias en el archivo composer.json y las actualizará si es necesario.
+#### composer remove <paquete>
+
+Descripción: Elimina una dependencia específica del proyecto, tanto del archivo composer.json como del directorio vendor/. Es útil cuando ya no necesitas una librería en tu proyecto.
+
+```bash
+composer remove guzzlehttp/guzzle
+```
+
+#### composer dump-autoload
+
+Descripción: Regenera el archivo autoload.php utilizado para cargar automáticamente las clases del proyecto sin tener que require cada archivo manualmente. Es necesario ejecutar este comando cuando agregas nuevas clases o cambias la estructura de archivos.
+
+```bash
+composer dump-autoload
+```
+
+#### composer validate
+
+Descripción: Verifica que el archivo composer.json esté bien estructurado y sin errores. Es útil para comprobar que tu configuración sea válida antes de compartir el proyecto o instalar dependencias.
+
+```bash
+composer validate
+```
+
+#### composer show
+
+Descripción: Muestra una lista de todas las dependencias instaladas en el proyecto, junto con información sobre las versiones actuales y las versiones disponibles de las mismas.
+
+```bash
+composer show
+```
+
+#### composer show <paquete>
+
+Descripción: Muestra información detallada sobre un paquete específico, como su versión, dependencias, y dónde se encuentra instalado.
+
+```bash
+composer show guzzlehttp/guzzle
+```
+
+#### composer self-update
+
+Descripción: Actualiza Composer a la versión más reciente disponible. Es útil para asegurarse de que estás utilizando la versión más reciente de Composer.
+
+```bash
+composer self-update
+```
+
+#### composer outdated
+
+Descripción: Muestra una lista de las dependencias que tienen nuevas versiones disponibles pero que aún no están actualizadas en el proyecto. Esto te permite saber qué paquetes podrían necesitar una actualización.
+
+```bash
+composer outdated
+```
+
+#### composer create-project <paquete> <directorio>
+
+Descripción: Este comando descarga y crea un nuevo proyecto basado en un paquete o esqueleto de proyecto. Por ejemplo, es comúnmente utilizado para instalar frameworks como Laravel.
+
+```bash
+composer create-project laravel/laravel myproject
+```
+
+#### composer global require <paquete>
+
+Descripción: Instala una dependencia de forma global en tu sistema (en lugar de solo en un proyecto específico), lo que significa que estará disponible para todos los proyectos.
+
+```bash
+composer global require laravel/installer
+```
+
+#### composer licenses
+
+Descripción: Muestra las licencias de todas las dependencias instaladas en el proyecto. Es útil para revisar las condiciones legales de las librerías que estás usando.
+
+```bash
+composer licenses
+```

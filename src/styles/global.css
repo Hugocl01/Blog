@@ -114,9 +114,16 @@ body {
     width: 100%;
     max-width: 80ch;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     padding: 0 1rem;
     line-height: 1.5;
     background-color: var(--background);
+}
+
+main {
+    flex-grow: 1;
 }
 
 /* - Estilo para el header principal */

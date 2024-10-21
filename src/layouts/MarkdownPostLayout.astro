@@ -5,17 +5,20 @@ const { frontmatter } = Astro.props; // Extrae las propiedades de frontmatter
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-
-    {/* Encabezado del artículo */}
-    <header>
-        <h1>{frontmatter.title}</h1> {/* Título del artículo */}
-        <p><em>{frontmatter.description}</em></p> {/* Descripción del artículo */}
-        <p>Escrito por: {frontmatter.author}{/* Autor del artículo */}</p>
-        <p>{frontmatter.pubDate.toString().slice(0, 10)}</p> {/* Fecha de publicación */}
-        <p>Tiempo de lectura: {frontmatter.readingTime}</p> {/* Tiempo estimado de lectura */}
-    </header>
-
     <section>
+        {/* Encabezado del artículo */}
+        <header>
+            <h1>{frontmatter.title}</h1>
+            {/* Título del artículo */}
+            <p><em>{frontmatter.description}</em></p>
+            {/* Descripción del artículo */}
+            <p>Escrito por: {frontmatter.author}{/* Autor del artículo */}</p>
+            <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
+            {/* Fecha de publicación */}
+            <p>Tiempo de lectura: {frontmatter.readingTime}</p>
+            {/* Tiempo estimado de lectura */}
+        </header>
+
         {/* Imagen destacada */}
         <Picture
             src={frontmatter.image.url}
@@ -28,17 +31,19 @@ const { frontmatter } = Astro.props; // Extrae las propiedades de frontmatter
         />
         {/* Etiquetas del artículo */}
         <div class="tags">
-            {frontmatter.tags.map((tag) => (
-                <a href={`/tags/${tag}`} class="tag">
-                    #{tag}
-                </a>
-            ))}
-        </div>  
-    </section>
+            {
+                frontmatter.tags.map((tag) => (
+                    <a href={`/tags/${tag}`} class="tag">
+                        #{tag}
+                    </a>
+                ))
+            }
+        </div>
 
-    {/* Contenido del artículo */}
-    <article>
-        <slot /> {/* El contenido del artículo se insertará aquí */}
-    </article>
-    
+        {/* Contenido del artículo */}
+        <article>
+            <slot />
+            {/* El contenido del artículo se insertará aquí */}
+        </article>
+    </section>
 </BaseLayout>

@@ -7,7 +7,7 @@ image:
     url: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
     alt: "Logo de JavaScript"
 pubDate: 2024-10-20
-readingTime: 8 min
+readingTime: 9 min
 tags: ["JavaScript", "Frontend", "Desarrollo web"]
 ---
 
@@ -332,6 +332,34 @@ Las funciones IIFE (Immediately Invoked Function Expression) son funciones que s
 ```
 
 Se utiliza para ejecutar código sin contaminar el espacio de nombres global, manteniendo las variables dentro del ámbito de la función.
+
+### Modo Estricto: `'use strict'`
+
+A estas alturas, ya hemos visto que JavaScript tiene muchas particularidades que pueden dar lugar a errores. Para limitar estos problemas, se añadió el **modo estricto** en ES5, que fomenta el uso de código más seguro y moderno en JavaScript.
+
+#### ¿Cómo habilitar el modo estricto?
+
+Puedes habilitar el modo estricto mediante la instrucción `'use strict'`. Esta instrucción admite dos ámbitos de uso:
+
+- **A nivel de script**: Debe ser la primera instrucción del script y se aplica a todo el código del mismo.
+- **A nivel de función**: Debe ser la primera instrucción de la función y se aplica únicamente a esa función.
+
+> **IMPORTANTE**: Si la instrucción no es la primera en el ámbito correspondiente, no se activará el modo estricto.
+
+#### Principales características del modo estricto
+
+El modo estricto activa un conjunto de reglas que proporcionan un entorno más seguro, lo que implica lo siguiente:
+
+- **No puedes usar variables sin declararlas**: Todas las variables deben ser declaradas con `var`, `let` o `const`.
+- **No puedes usar la instrucción `delete`**: La eliminación de propiedades de objetos se restringe.
+- **No puedes mezclar distintas notaciones matemáticas**: Se evita la confusión entre octales y decimales.
+- **No puedes usar palabras reservadas como nombres de variable**: Algunas palabras están reservadas por el lenguaje y no se pueden utilizar como identificadores.
+- **No puedes definir dos parámetros con el mismo nombre**: Por ejemplo, `fn(p1, p1)` generará un error.
+- **En Programación Orientada a Objetos (POO)**: No puedes escribir en propiedades de solo lectura ni leer en propiedades de solo escritura (getters y setters).
+- **La función `eval()`** no puede definir variables por seguridad.
+- **El objeto `this`** en funciones ahora es `undefined`: Normalmente, hace referencia al objeto `window`, pero en el modo estricto, `this` es `undefined`.
+
+Con el modo estricto, puedes escribir código más robusto y evitar errores comunes en JavaScript, lo que mejora la mantenibilidad y la legibilidad de tus proyectos.
 
 ## Conclusión
 

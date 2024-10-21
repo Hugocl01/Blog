@@ -7,7 +7,7 @@ image:
     url: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
     alt: "Logo de JavaScript"
 pubDate: 2024-10-20
-readingTime: 7 min
+readingTime: 8 min
 tags: ["JavaScript", "Frontend", "Desarrollo web"]
 ---
 
@@ -195,9 +195,9 @@ do {
 } while (i < 5);
 ```
 
-## Instrucciones `continue` y `break`
+### Instrucciones `continue` y `break`
 
-### Instrucción `break`
+#### Instrucción `break`
 
 La instrucción `break` se utiliza para salir de un bucle de forma anticipada, es decir, cuando se cumple una condición determinada dentro del bucle, el flujo de ejecución salta fuera del mismo.
 
@@ -210,7 +210,7 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
-### Instrucción `continue`
+#### Instrucción `continue`
 
 La instrucción continue se utiliza para saltar la iteración actual del bucle y pasar a la siguiente, sin detener completamente el bucle.
 
@@ -245,22 +245,100 @@ console.log(persona.nombre); // Hugo
 
 ### Funciones
 
+Las funciones en JavaScript son bloques de código reutilizables que permiten ejecutar una tarea específica. Se pueden definir de varias formas según las necesidades del desarrollador.
+
 #### Funciones con nombre
 
-Las funciones son bloques de código que realizan una tarea específica. Se pueden definir con la palabra clave function.
+Son las funciones tradicionales, definidas con la palabra clave `function` y un nombre que las identifica.
 
 ```js
-function saludar() {
-  console.log("Hola!");
+function saludo(nombre) {
+  return `Hola, ${nombre}`;
 }
-saludar(); // Llama a la función
+
+console.log(saludo("Ana")); // "Hola, Ana"
 ```
+
+Estas funciones se pueden invocar en cualquier parte del código después de su declaración.
+
+#### Parámetro variable `(...rest)`
+
+JavaScript permite definir funciones que aceptan un número indeterminado de argumentos utilizando el parámetro rest `(...)`.
+
+```js
+function sumar(...numeros) {
+  return numeros.reduce((acumulado, num) => acumulado + num, 0);
+}
+
+console.log(sumar(1, 2, 3, 4)); // 10
+```
+
+Aquí, `...numeros` recoge todos los argumentos pasados y los convierte en un array que luego se utiliza dentro de la función.
+Funciones anónimas
+
+#### Funciones anónimas
+
+Son funciones que no tienen nombre y generalmente se asignan a variables o se pasan como argumentos a otras funciones.
+
+```js
+const multiplicar = function (a, b) {
+  return a * b;
+};
+
+console.log(multiplicar(3, 4)); // 12
+```
+
+Las funciones anónimas suelen ser usadas en callbacks.
 
 #### Arrow functions
 
-Es una sintaxis más concisa para definir funciones.
+Las arrow functions son una sintaxis más concisa para escribir funciones. Además, no crean su propio contexto `this`, lo que las hace útiles en ciertas situaciones.
 
 ```js
-const sumar = (a, b) => a + b;
-console.log(sumar(2, 3)); // 5
+const restar = (a, b) => a - b;
+console.log(restar(10, 5)); // 5
 ```
+
+Si la función tiene un único parámetro, se pueden omitir los paréntesis, y si el cuerpo de la función tiene solo una expresión, se puede omitir el return y las llaves.
+
+#### Closures
+
+Un closure se forma cuando una función interna tiene acceso a las variables de su función externa, incluso después de que la función externa haya terminado su ejecución.
+
+```js
+function crearContador() {
+  let contador = 0;
+  return function () {
+    contador++;
+    return contador;
+  };
+}
+
+const incrementar = crearContador();
+console.log(incrementar()); // 1
+console.log(incrementar()); // 2
+```
+
+En este ejemplo, la función interna sigue accediendo a la variable contador aunque la función `crearContador` ya haya terminado de ejecutarse.
+
+#### Funciones auto-invocadas (IIFE)
+
+Las funciones IIFE (Immediately Invoked Function Expression) son funciones que se invocan inmediatamente después de ser definidas.
+
+```js
+(function () {
+  console.log("Esta función se ejecuta automáticamente");
+})();
+```
+
+Se utiliza para ejecutar código sin contaminar el espacio de nombres global, manteniendo las variables dentro del ámbito de la función.
+
+## Conclusión
+
+¡Y así llegamos al final! Hemos recorrido juntos muchos de los conceptos esenciales de JavaScript, desde las bases como la declaración de variables y operadores, hasta funciones avanzadas como las arrow functions, closures, y las auto-invocadas IIFE. Además, exploramos cómo manejar estructuras de control, arrays, objetos, y más, para que puedas darle vida a tus proyectos.
+
+JavaScript es un lenguaje versátil y poderoso, pero como todo en la programación, la práctica es lo que realmente te ayudará a dominarlo. No te preocupes si al principio parece mucho, todos hemos pasado por ahí. Lo importante es que sigas experimentando, aprendiendo y, sobre todo, divirtiéndote mientras lo haces.
+
+Espero que este post te haya servido como un buen punto de partida o de repaso. Si tienes preguntas o comentarios, no dudes en compartirlos. ¡Gracias por leer y sigue creando cosas geniales con JavaScript!
+
+¡Nos vemos en el próximo post👋!

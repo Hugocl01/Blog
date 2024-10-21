@@ -7,7 +7,7 @@ image:
     url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1067px-PHP-logo.svg.png"
     alt: "Miniatura de los rayos de Astro."
 pubDate: 2024-09-22
-readingTime : 5 min
+readingTime : 3 min
 tags: ["PHP", "Backend", "Desarrollo web"]
 ---
 
@@ -63,3 +63,9 @@ Para asegurarte de que PHP está correctamente instalado en tu entorno, abre el 
 ```
 
 4. Abre tu navegador y escribe en la barra de direcciones http://localhost/mi-primer-proyecto/. Si ves el mensaje "¡Hola, mundo!" en la pantalla, tu entorno está listo para trabajar con PHP.
+
+## Conclusión
+
+¡Y ahí lo tienes! Has dado tus primeros pasos en el mundo de PHP configurando un entorno de desarrollo con Visual Studio Code y XAMPP. Ahora puedes comenzar a explorar y crear tus propias aplicaciones web dinámicas.
+
+Espero que este artículo te haya sido útil y que estés emocionado por comenzar tu aventura en PHP. ¡Gracias por leer y mucho éxito en tus proyectos! ¡Nos vemos en la próxima! 😊

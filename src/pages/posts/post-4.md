@@ -7,7 +7,7 @@ image:
     url: "https://getcomposer.org/img/logo-composer-transparent2.png"
     alt: "Logo de Composer"
 pubDate: 2024-09-21
-readingTime: 10 min
+readingTime: 7 min
 tags: ["PHP", "Composer", "Backend", "Desarrollo web"]
 ---
 
@@ -257,3 +257,13 @@ composer licenses
 ```
 
 Con toda esta ayuda, ya estas listo para utilizar Composer en tus proyectos.
+
+## Conclusión
+
+Y así llegamos al final de este recorrido por Composer. Espero que ahora te sientas un poco más cómodo con esta herramienta y que puedas aprovecharla al máximo en tus proyectos PHP. 
+
+Recuerda que gestionar las dependencias no tiene que ser un dolor de cabeza; con Composer, puedes mantener todo en orden y facilitar tu trabajo. Así que no dudes en experimentar y jugar con los distintos paquetes que ofrece. 
+
+Si alguna vez te encuentras con dudas o simplemente quieres compartir lo que has aprendido, estaré encantado de escuchar de ti. Tu viaje en el desarrollo web es único, y me encantaría ser parte de él. 
+
+¡Gracias por acompañarme en este post! ¡Espero verte de nuevo pronto😊!

@@ -6,7 +6,7 @@ description: "Una guía rápida para instalar y usar Composer en proyectos PHP"
 image:
     url: "https://getcomposer.org/img/logo-composer-transparent2.png"
     alt: "Logo de Composer"
-pubDate: 2024-09-29
+pubDate: 2024-09-21
 readingTime: 10 min
 tags: ["PHP", "Composer", "Backend", "Desarrollo web"]
 ---
@@ -255,3 +255,5 @@ Descripción: Muestra las licencias de todas las dependencias instaladas en el p
 ```bash
 composer licenses
 ```
+
+Con toda esta ayuda, ya estas listo para utilizar Composer en tus proyectos.

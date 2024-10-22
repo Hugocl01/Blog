@@ -123,7 +123,7 @@ Lista de valores "falsy":
 * "", '', `` Cadena vacía.
 * document.all
 
-Todo los valores que no son "falsy" son "truthy".
+Todos los valores que no son "falsy" son "truthy".
 
 ### Estructuras de control
 
@@ -321,7 +321,7 @@ console.log(incrementar()); // 2
 
 En este ejemplo, la función interna sigue accediendo a la variable contador aunque la función `crearContador` ya haya terminado de ejecutarse.
 
-#### Funciones auto-invocadas (IIFE)
+#### Funciones auto invocadas (IIFE)
 
 Las funciones IIFE (Immediately Invoked Function Expression) son funciones que se invocan inmediatamente después de ser definidas.
 

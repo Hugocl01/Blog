@@ -95,7 +95,7 @@ Confirm changes made:
 Do you confirm generation? (yes/no) [yes]: yes
 ```
 
-Una vez confirmado se creara un archivo **composer.json** similar a este:
+Una vez confirmado se creará un archivo **composer.json** similar a este:
 
 ```json
 {
@@ -226,7 +226,7 @@ composer self-update
 
 #### composer outdated
 
-Descripción: Muestra una lista de las dependencias que tienen nuevas versiones disponibles pero que aún no están actualizadas en el proyecto. Esto te permite saber qué paquetes podrían necesitar una actualización.
+Descripción: Muestra una lista de las dependencias que tienen nuevas versiones disponibles, pero que aún no están actualizadas en el proyecto. Esto te permite saber qué paquetes podrían necesitar una actualización.
 
 ```bash
 composer outdated
@@ -256,7 +256,7 @@ Descripción: Muestra las licencias de todas las dependencias instaladas en el p
 composer licenses
 ```
 
-Con toda esta ayuda, ya estas listo para utilizar Composer en tus proyectos.
+Con toda esta ayuda, ya estás listo para utilizar Composer en tus proyectos.
 
 ## Conclusión
 

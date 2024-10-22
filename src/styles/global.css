@@ -179,6 +179,16 @@ a {
     color: var(--text-a);
 }
 
+p>a {
+    color: var(--text-a);
+    font-weight: bolder;
+    font-style: italic;
+}
+
+p>a:hover {
+    color: var(--text-a-hover);
+}
+
 ul,
 ol {
     margin: 0 24px 2rem 24px;

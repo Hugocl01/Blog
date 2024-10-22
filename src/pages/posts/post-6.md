@@ -192,3 +192,202 @@ console.log(newArray);  // Imprime [2, 4, 6, 8, 10]
 * Legibilidad:
   * Los métodos pueden ser más legibles y expresivos cuando se realizan operaciones comunes en cada elemento.
   * Sin embargo, los operadores ofrecen más flexibilidad para controlar el flujo de iteración.
+
+#### Métodos de Arrays en JavaScript: Mutables y No Mutables
+
+En JavaScript, los arrays disponen de una amplia variedad de métodos para manipular y procesar datos. Estos métodos se pueden dividir en dos grandes grupos: mutables y no mutables.
+
+* **Métodos Mutables**: Modifican directamente el array original.
+* **Métodos No Mutables**: Devuelven una copia del array, sin modificar el original.
+
+A continuación, repasaremos algunos de los métodos más útiles según su funcionalidad, ya sea para búsquedas, ordenación o modificación de elementos.
+
+Búsquedas
+1. .indexOf(valor)
+
+    Tipo: No mutable.
+    Devuelve el índice del primer elemento que coincida con el valor. Si no lo encuentra, devuelve -1. Admite un segundo parámetro que indica el inicio de la búsqueda.
+
+```js
+let cosas = ['uno', 2, 'tres', 4, 'cinco'];
+let busqueda = cosas.indexOf('tres');
+console.log(busqueda);  // Devuelve 2
+```
+
+1. .filter(función)
+
+    Tipo: No mutable.
+    Devuelve un nuevo array con los elementos que cumplen la condición establecida en la función proporcionada.
+
+```js
+let numeros = cosas.filter(ele => typeof ele === 'number');
+console.log(numeros);  // Devuelve [2, 4]
+```
+
+Ordenar
+1. .sort()
+
+    Tipo: Mutable.
+    Ordena el array original según un criterio (por defecto, orden alfabético). Este método modifica el array original.
+
+```js
+let copia = [4, 55, 5, 1, 11, 'tres', 'dos', 7];
+copia.sort();
+console.log(copia);  // Devuelve [1, 11, 4, 5, 55, 7, "dos", "tres"]
+```
+
+1. .toSorted()
+
+    Tipo: No mutable.
+    Similar a .sort(), pero devuelve una copia ordenada del array original, sin modificarlo.
+
+```js
+let original = [4, 55, 5, 1, 11, 'tres', 'dos', 7];
+let ordenados = original.toSorted();
+console.log(ordenados);  // Devuelve [1, 11, 4, 5, 55, 7, "dos", "tres"]
+console.log(original);   // Devuelve [4, 55, 5, 1, 11, 'tres', 'dos', 7]
+```
+
+Criterios de Ordenación Personalizados
+
+Puedes pasar una función a .sort() o .toSorted() para definir cómo se deben ordenar los elementos. Ejemplo, ordenar un array de objetos por edad:
+
+```js
+let personas = [
+  { nombre: 'Juan', edad: 30 },
+  { nombre: 'Ana', edad: 25 },
+  { nombre: 'Carlos', edad: 35 }
+];
+```
+
+personas.sort((a, b) => a.edad - b.edad);
+console.log(personas);  // Ordenado por edad
+
+Otros Métodos Útiles
+1. .push(...elementos)
+
+    Tipo: Mutable.
+    Añade uno o más elementos al final del array.
+
+```js
+let array = [1, 2];
+array.push(3, 4);
+console.log(array);  // Devuelve [1, 2, 3, 4]
+```
+
+1. .pop()
+
+    Tipo: Mutable.
+    Elimina y devuelve el último elemento del array.
+
+```js
+let ultimo = array.pop();
+console.log(ultimo);  // Devuelve 4
+console.log(array);   // Devuelve [1, 2, 3]
+```
+
+1. .shift()
+
+    Tipo: Mutable.
+    Elimina y devuelve el primer elemento del array.
+
+```js
+let primero = array.shift();
+console.log(primero);  // Devuelve 1
+console.log(array);    // Devuelve [2, 3]
+```
+
+1. .unshift(...elementos)
+
+    Tipo: Mutable.
+    Añade uno o más elementos al inicio del array.
+
+```js
+array.unshift(0);
+console.log(array);  // Devuelve [0, 2, 3]
+```
+
+1. .join(separador)
+
+    Tipo: No mutable.
+    Une todos los elementos de un array en una cadena, separándolos por el valor del separador.
+
+```js
+let cadena = array.join(' - ');
+console.log(cadena);  // Devuelve "0 - 2 - 3"
+```
+
+1. .split(separador)
+
+    Tipo: No mutable.
+    Divide una cadena en un array de subcadenas usando el separador especificado.
+
+```js
+let texto = "uno,dos,tres";
+let arrayTexto = texto.split(',');
+console.log(arrayTexto);  // Devuelve ["uno", "dos", "tres"]
+```
+
+1. .concat(...arrays)
+
+    Tipo: No mutable.
+    Combina dos o más arrays en uno nuevo.
+
+```js
+let combinado = array.concat([4, 5]);
+console.log(combinado);  // Devuelve [0, 2, 3, 4, 5]
+```
+
+1. .flat(profundidad=1)
+
+    Tipo: No mutable.
+    Aplana arrays anidados en un nuevo array hasta la profundidad indicada.
+
+```js
+let anidado = [1, [2, 3], [4, [5]]];
+let plano = anidado.flat(2);
+console.log(plano);  // Devuelve [1, 2, 3, 4, 5]
+```
+
+1. .fill(valor, inicio?, fin?)
+
+    Tipo: Mutable.
+    Llena el array con un valor especificado desde el índice de inicio hasta fin (opcional).
+
+```js
+let llenado = [1, 2, 3, 4];
+llenado.fill(0, 1, 3);
+console.log(llenado);  // Devuelve [1, 0, 0, 4]
+```
+
+1.  .reverse()
+
+    Tipo: Mutable.
+    Invierte el array original.
+
+```js
+let invertido = [1, 2, 3].reverse();
+console.log(invertido);  // Devuelve [3, 2, 1]
+```
+
+1.  .toReversed()
+
+    Tipo: No mutable.
+    Devuelve una copia del array invertido.
+
+```js
+let originalArray = [1, 2, 3];
+let invertidoCopia = originalArray.toReversed();
+console.log(invertidoCopia);  // Devuelve [3, 2, 1]
+console.log(originalArray);   // Devuelve [1, 2, 3]
+```
+
+1.  .slice(inicio, fin?)
+
+    Tipo: No mutable.
+    Devuelve una copia de una porción del array desde el índice inicio hasta fin (no incluido).
+
+```js
+let porcion = [1, 2, 3, 4].slice(1, 3);
+console.log(porcion);  // Devuelve [2, 3]
+```

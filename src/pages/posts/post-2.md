@@ -632,3 +632,7 @@ El componente `ThemeChange.astro` permite a los usuarios cambiar entre el tema c
     });
 </script>
 ```
+
+¡Gracias por leer mi experiencia creando este blog con Astro! Espero que este recorrido te haya resultado útil y te inspire a crear tu propio sitio web. Si necesitas mas soporte, puedes visitar el [repositorio de GitHub](https://github.com/Hugocl01/Blog) con todo el codigo
+
+Nos vemos en el próximo artículo, ¡hasta pronto!
